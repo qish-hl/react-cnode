@@ -35,6 +35,7 @@ module.exports = {
         path, //编译到当前目录
         filename: '[name].js' //编译后的文件名字
     },
+    devtool: 'source-map',
     module: {
 	      rules: [
             {

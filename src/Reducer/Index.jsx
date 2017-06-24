@@ -22,9 +22,9 @@ const User = (state = JSON.parse(Tool.localItem('User')), action) => {
 }
 
 
-const DB = (_ID = '', seting = {}) => {
+const DB = (_ID = '', setting = {}) => {
     const cb = {
-        setDefaut: () => {
+        setDefault: () => {
             var defaults = merged({
                 path: '', //当前页面的href
                 loadAnimation: true, //true显示加载动画，false 不显示加载动画
@@ -33,7 +33,7 @@ const DB = (_ID = '', seting = {}) => {
                 scrollX: 0, //滚动条X
                 scrollY: 0, //滚动条Y 
                 mdrender: true //当为 false 时，不渲染。默认为 true，渲染出现的所有 markdown 格式文本。
-            }, seting);
+            }, setting);
             return {
                 defaults,
                 path: {}
@@ -51,7 +51,7 @@ const DB = (_ID = '', seting = {}) => {
         } else if (cb[action.type]) {
             return cb[action.type](state, action.target);
         } else {
-            return cb.setDefaut();
+            return cb.setDefault();
         }
     }
 }
